@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
 const App = () => {
@@ -79,6 +80,11 @@ const App = () => {
         value={uf}
         onChangeText={setUf}
       />
+
+      <TouchableOpacity style={styles.button} onPress={() => alert('Você clicou no botão')}>
+        <Text style={styles.buttonText}>Clique</Text>
+      </TouchableOpacity>
+
       <ScrollView style={styles.scrollView}>
         {alunosEquipe.map((aluno, index) => (
           <Text key={index} style={styles.aluno}>
@@ -118,10 +124,21 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     marginBottom: 10,
   },
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 18,
+  },
   scrollView: {
     marginTop: 20,
     width: '100%',
-    maxHeight: 200, // Ajuste este valor conforme necessário
+    maxHeight: 200,
     borderWidth: 1,
     borderColor: 'gray',
   },
