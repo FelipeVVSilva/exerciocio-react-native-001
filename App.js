@@ -22,6 +22,7 @@ const App = () => {
   const alunosEquipe = [
     { nome: 'Felipe Veiga Velloso da Silva', matricula: '202104478763' },
     { nome: 'Bruno da Veiga Ramos', matricula: '202002457309' },
+    { nome: 'Bernardo Chermont', matricula: '202002435682' },
   ];
 
   return (
@@ -85,7 +86,7 @@ const App = () => {
         <Text style={styles.buttonText}>Clique</Text>
       </TouchableOpacity>
 
-      <ScrollView style={styles.scrollView}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
         {alunosEquipe.map((aluno, index) => (
           <Text key={index} style={styles.aluno}>
             Nome: {aluno.nome}, Matrícula: {aluno.matricula}
@@ -135,10 +136,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
   },
-  scrollView: {
-    marginTop: 20,
+  scrollViewContent: {
+    flexGrow: 1,
+    marginTop: 10,
+    paddingBottom: 30, // Espaço adicional no final do ScrollView
+    paddingTop: 10,
     width: '100%',
-    maxHeight: 200,
     borderWidth: 1,
     borderColor: 'gray',
   },
